@@ -25,7 +25,7 @@ class Pyqt5 < Formula
 
   def patches
     # Enable qml-debugging
-    DATA
+    "https://gist.github.com/ableton-toh/7660057/raw"
   end
 
   def install
@@ -81,14 +81,3 @@ class Pyqt5 < Formula
     end
   end
 end
-__END__
---- ./configure.py.orig 2013-11-01 17:09:16.000000000 +0100
-+++ ./configure.py  2013-11-01 17:09:24.000000000 +0100
-@@ -1891,6 +1891,8 @@
-
-     pro_lines.append(
-             'CONFIG += %s' % ('debug' if debug else 'release'))
-+    pro_lines.append(
-+            'CONFIG += qml_debug')
-
-     pro_lines.extend(target_config.qmake_variables)
