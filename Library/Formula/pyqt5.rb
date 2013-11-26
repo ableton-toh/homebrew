@@ -24,8 +24,13 @@ class Pyqt5 < Formula
   end
 
   def patches
-    # Enable qml-debugging
-    "https://gist.github.com/ableton-toh/7660057/raw"
+    [
+      # Enable qml-debugging
+      "https://gist.github.com/ableton-toh/7660057/raw",
+      # Fix bug that prevents passing keyword arguments from python.
+      # Reported to upstream via email.
+      "https://gist.github.com/ableton-toh/7660245/raw"
+    ]
   end
 
   def install
